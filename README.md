@@ -37,6 +37,12 @@ The database has two tables: `Contact` and `PhoneNumber`.
 
 The `contact_id` column in the `PhoneNumber` table is used to establish a one-to-many relationship between the `Contact` and `PhoneNumber` tables, so that a single contact can have multiple phone numbers.
 
+### To run the application, first build the Docker stack using docker-compose -f local.yml build. Make sure to have pre-commit installed globally on your local machine.
+
+### After that, run the stack with `docker-compose -f local.yml up`. You can also use `docker-compose up` if you have set the COMPOSE_FILE environment variable to local.yml.
+
+### To execute management commands, use `docker-compose -f local.yml run --rm django python manage.py [command]`.
+
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
