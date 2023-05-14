@@ -2,6 +2,41 @@
 
 simple phonebook application that has contact names and their numbers.
 
+## Database schema
+
+```
++----------------+     +-----------------+
+| Contact        |     | PhoneNumber     |
++----------------+     +-----------------+
+| id             |<-+  | id              |
+| name           |  +--| contact_id (FK) |
++----------------+     | number          |
+                       +-----------------+
+```
+
+description of the models:
+
+## Database Schema
+
+The database has two tables: `Contact` and `PhoneNumber`.
+
+### Contact Table
+
+| Column | Type        | Description             |
+| ------ | ----------- | ----------------------- |
+| id     | integer     | Primary key for contact |
+| name   | varchar(50) | Name of the contact     |
+
+### PhoneNumber Table
+
+| Column     | Type        | Description                                       |
+| ---------- | ----------- | ------------------------------------------------- |
+| id         | integer     | Primary key for phone number                      |
+| contact_id | integer     | Foreign key to `Contact` table (one-to-many link) |
+| number     | varchar(20) | Phone number for the contact                      |
+
+The `contact_id` column in the `PhoneNumber` table is used to establish a one-to-many relationship between the `Contact` and `PhoneNumber` tables, so that a single contact can have multiple phone numbers.
+
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
