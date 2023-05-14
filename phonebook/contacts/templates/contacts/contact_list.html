@@ -15,8 +15,7 @@
       <td>{{ contact.id }}</td>
       <td>{{ contact.name }}</td>
       <td>
-        {% for phone_number in contact.phone_numbers.all %} {{
-        phone_number.number }}<br />
+        {% for phone_number in contact.phone_numbers.all %} {{ phone_number.number }}<br />
         {% empty %} No phone numbers found. {% endfor %}
       </td>
       <td>
